@@ -26,6 +26,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/admin', function () {
+        return view('admin.index');
+    });
+
+
 // Route::get('/news', function () {
 //     return view('news');
 //     //return "Beluga rules.";
@@ -357,3 +363,6 @@ Route::get('/setname', function(){
         $user->name = "william shatner";
         $user->save();
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
